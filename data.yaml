@@ -1,0 +1,42 @@
+IP_ADDRESS: 10.20.1.222
+
+
+USERNAME: admin
+
+PASSWORD: production
+
+
+
+PROJECT_NAME: Customer 360 - Individuals #The project name used to query Tamr api
+  # PROJECT_VIEW: CRM Unification - B2B Sales  # the value rendered for the project name in the drop down menu on the web page
+
+# METRICS_TYPE: 1 # either 0 or 1; 0 to show the Matching Probability; 1 shows the average attributes similarities
+INPUT_ATTRS:
+    #list of input attributes to query LLM; it must include attributes for at least one DNF clause
+
+  - ATTR_NAME: Customer #name of the web attribute; must be the identical as the field in Tamr
+    ATTR_VIEW: Full Name # actual values you want to render on the web form
+    DEFAULT_VALUE: al-azhar SHEIKH
+
+  - ATTR_NAME: Email #name of the attribute; must be the identical as the field in Tamr
+    ATTR_VIEW: NPPES NPI #actual values you want to render in the web form
+    DEFAULT_VALUE:  #prefilled default value
+
+  - ATTR_NAME: ACC_BAL #name of the attribute; must be the identical as the field in Tamr
+    ATTR_VIEW: Provider Street Address #actual values you want to render in the web form
+    DEFAULT_VALUE: 1060 William #prefilled default value
+
+  - ATTR_NAME: CREDIT_LMT  #name of the attribute; must be the identical as the field in Tamr
+    ATTR_VIEW: Provider Mailing State #actual values you want to render in the web form
+    DEFAULT_VALUE: TN #prefilled default value
+
+  - ATTR_NAME: CARD STATUS #name of the attribute; must be the identical as the field in Tamr
+    ATTR_VIEW: Provider Mailing Postal Code #actual values you want to render in the web form
+    DEFAULT_VALUE: 37312 #prefilled default value
+
+Upsert : False
+
+HideMainHeader : True
+
+    #all information needed for golden record query and rendering
+GR_DT_DATASET_NAME: Customer 360 Golden Records_golden_records

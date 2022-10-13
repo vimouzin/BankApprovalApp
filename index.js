@@ -1,7 +1,16 @@
-/*
+const express = require('express')
+const path = require('path')
+const app = express()
+const port = 4500
 
-Original design: https://dribbble.com/shots/2342688-Leaderboard-Day-019-dailyui
+app.use(express.static(path.join(__dirname, 'public')));
 
-Trophy SVG: https://www.flaticon.com/free-icon/trophy_263056
 
-*/
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
